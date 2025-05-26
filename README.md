@@ -84,7 +84,7 @@ Indicador visual que muestra el progreso hacia el envío gratuito.
 
 ## 🔧 Componentes Atómicos
 
-### 🟩 Botón
+### Botón
 
 Botón reutilizable para acciones primarias.
 
@@ -95,7 +95,7 @@ Estados:
 
 ---
 
-### 🟦 Tabs (Pestañas de Navegación)
+### Tabs (Pestañas de Navegación)
 
 
 
@@ -105,7 +105,7 @@ Estados:
 
 ---
 
-### 🟥 Inputs (Campos de texto)
+###  Inputs (Campos de texto)
 
 
 Estados:
@@ -116,7 +116,7 @@ Estados:
 
 ---
 
-### ✅ Checkbox + Texto legal
+###  Checkbox + Texto legal
 
 
 - Incluye texto informativo con enlace institucional
@@ -125,7 +125,7 @@ Estados:
 
 ---
 
-### ⬛ Botones Flotantes (Icon Buttons / FABs)
+### Botones Flotantes (Icon Buttons / FABs)
 
 ```html
 <button class="fab"><i class="icon-filtro"></i></button>
@@ -137,7 +137,7 @@ Estados:
 - Íconos representativos: filtro, búsqueda, carrito
 - Usos: acciones rápidas o accesos flotantes en móviles
 
-## 🧩 Componentes Incluidos
+##  Componentes Incluidos
 
 ### 1. `barra-superior`
 Barra de navegación con:
@@ -196,12 +196,12 @@ Controles de paginación con botones:
 - Al seleccionar una página o “Siguiente”, se actualiza la vista activa (simulado).
 
 
-#2- Camila 
-## Componentes de Información de Producto
+
+# Componentes de Información de Producto (Camila Obando)
 
 Estos componentes forman la base visual del catálogo de productos y reflejan estados comerciales como promociones, disponibilidad o destaque.
 
-### 🧩 ProductCard
+###  ProductCard
 
 Tarjeta principal que muestra información resumida del producto. Tiene variantes según el contexto.
 
