@@ -59,7 +59,7 @@ Indicador visual que muestra el progreso hacia el envío gratuito.
 - Texto con el estado del envío
 - Indicación visual y textual al alcanzar el envío gratuito (`"Envío gratis"`)
 
-**Comportamiento:**
+**Comportamiento:**   
 - Se actualiza automáticamente según el total acumulado del carrito
 
 
@@ -194,6 +194,78 @@ Controles de paginación con botones:
 - Muestra botones numéricos para navegar entre páginas.
 - El botón “Anterior” se desactiva en la primera página.
 - Al seleccionar una página o “Siguiente”, se actualiza la vista activa (simulado).
+
+
+#2- Camila 
+## Componentes de Información de Producto
+
+Estos componentes forman la base visual del catálogo de productos y reflejan estados comerciales como promociones, disponibilidad o destaque.
+
+### 🧩 ProductCard
+
+Tarjeta principal que muestra información resumida del producto. Tiene variantes según el contexto.
+
+#### Variantes y Estados
+
+| Variante  | Descripción                              | Estilo Principal                     | Interacciones           |
+|-----------|------------------------------------------|--------------------------------------|--------------------------|
+| Default   | Tarjeta estándar para producto disponible. | Color neutro, botón activo           | Hover: sombra suave     |
+| Featured  | Producto destacado o en promoción.         | Precio en verde, badge               | Hover: resalta fondo     |
+| SoldOut   | Producto agotado, no disponible para compra. | Imagen con opacidad, botón deshabilitado | Sin interacciones       |
+
+#### Estructura General
+
+| Elemento            | Tipo                          | Detalles / Comportamiento                                 |
+|---------------------|-------------------------------|-----------------------------------------------------------|
+| Imagen del producto | ProductImage/HoverZoom        | Zoom al pasar el mouse, borde redondeado                  |
+| Nombre / descripción| Texto                         | 2 líneas máximo, truncado con puntos suspensivos          |
+| Precio              | Price/Normal o Price/Discounted| Según si aplica promoción                                 |
+| Botón acción        | Button/Primary                | “Agregar al carrito”, adaptativo según estado             |
+| Badges              | Badge/Discount, Badge/Oferta  | Posicionados en esquina superior                          |
+| Estado adicional    | Texto informativo             | Ej: “Envío gratis”, “Producto agotado”                    |
+
+---
+
+### 💰 Componente: Price
+
+Permite mostrar precios con o sin descuento. Se adapta a distintos contextos visuales (catálogo, detalle, resumen).
+
+#### Tipos de Precio
+
+| Variante   | Ejemplo visual       | Detalles                                                  |
+|------------|----------------------|------------------------------------------------------------|
+| Normal     | $19.99               | Precio sin oferta, color neutro oscuro `#111827`          |
+| Discounted | $29.99 $19.99        | Precio tachado y resaltado, badge de descuento            |
+
+#### Especificaciones visuales
+
+| Propiedad           | Valor                          |
+|---------------------|--------------------------------|
+| Fuente              | Montserrat SemiBold            |
+| Tamaño de fuente    | 1.1rem - 1.5rem (según dispositivo) |
+| Color - normal      | `#111827`                      |
+| Color - destacado   | `#10B981` (verde)              |
+| Color - descuento   | `#F87171` (rojo claro)         |
+
+---
+
+### 🖼️ Componente: ProductImage/HoverZoom
+
+Permite interactividad visual sobre las imágenes del producto en tarjetas o galerías.
+
+#### Comportamiento
+
+- Al pasar el cursor, la imagen se escala al 110%.
+- Transición suave con `ease-in-out` en `0.3s`.
+- Fallback para pantallas táctiles (no hace zoom en mobile).
+
+#### Estilos
+
+```css
+.product-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
 
 ## Referencias
 - [Enlace del Figma](https://www.figma.com/design/8tMipBuMrbw83sfuhSUQY7/Sistema-de-Dise%C3%B1o---ESPE-E-commerce?node-id=0-1&t=WuUwI7GtVpzrKKdF-1)
